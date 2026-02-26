@@ -1,1 +1,4 @@
-troca()
+
+if(!global.loja){
+	troca()
+}

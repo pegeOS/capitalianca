@@ -6,9 +6,9 @@ atual = 0
 itens = []
 
 //adicionando no array
-array_push(itens, ["tabua", 30, " Construa o seu caminho"])
-array_push(itens, ["espada", 50, " Elimine quem voce precisar eliminar! "])
-array_push(itens, ["tocha", 70, " Ilumine a sua caminhada"])
+array_push(itens, ["tabua", 20, " Construa o seu caminho"])
+array_push(itens, ["espada", 45, " Elimine quem voce precisar eliminar! "])
+array_push(itens, ["tocha", 30, " Ilumine a sua caminhada"])
 
 //numero de itens
 quant = array_length(itens)

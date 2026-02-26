@@ -1,6 +1,6 @@
 
 //se nao tiver na loja, colidir com o player e apertar E, entra na loja
-if(!global.loja && place_meeting(x, y, obj_player_rico) && keyboard_check_pressed(ord("E"))){
+if(camera_get_view_target(view_camera[0]) == obj_player_rico && !global.loja && place_meeting(x, y + 3, obj_player_rico) && keyboard_check_pressed(ord("E"))){
 
 	global.loja = true
 }
@@ -30,5 +30,22 @@ if(global.loja){
 		//se o atual tiver o indice menor que 0, vai pro ultimo
 		if(atual < 0) atual = quant - 1
 	}
-
+	
+	
+	//Comprando
+	var _produto = itens[atual]
+	
+	var _item = _produto[0]
+	var _preco = _produto[1]
+	
+	//se apertar enter e tiver dinheiro suficiente, compra o item.
+	if(keyboard_check_pressed(vk_enter) && global.dinheiro >= _preco){
+		
+		//adiciona ao inventario
+		array_push(global.inventario, _item)
+		
+		//desconta do dinheiro
+		global.dinheiro -= _preco;
+	
+	}
 }

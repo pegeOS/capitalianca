@@ -5,6 +5,7 @@ velv = 0;
 vel = 4;
 
 
+
 move = function(){
 	
 	//pegando os inputs
@@ -23,5 +24,5 @@ move = function(){
 		velh = 0
 	}
 	
-	move_and_collide(velh, velv, obj_parede)
+	move_and_collide(velh, velv, global.colisoes)
 }

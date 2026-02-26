@@ -6,6 +6,12 @@ velv = 0;
 
 vel = 4;
 
+tempo = 60
+timer = tempo
+
+
+inventario = noone
+
 
 move = function(){
 	
@@ -25,5 +31,29 @@ move = function(){
 		velh = 0
 	}
 	
-	move_and_collide(velh, velv, obj_parede)
+	//vai diminuindo o timer da espada
+	timer--
+	
+	
+	move_and_collide(velh, velv, global.colisoes)
+}
+
+
+ataque = function(){
+	
+	var _tem_espada = array_contains(global.inventario, "espada")
+	var _clicou = mouse_check_button_pressed(mb_left) || keyboard_check_pressed(ord("X"))
+	
+
+	//AJEITA ESSA PARTE
+	if(_tem_espada){
+		
+		if(_clicou && timer <= 0){
+			instance_create_layer(x + 10, y, "Slash", obj_slash)
+				
+			timer = tempo
+			
+		}
+	}
+
 }
